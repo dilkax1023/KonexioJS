@@ -10,5 +10,5 @@ function swapCase(str) {
   return myStr;
 }
 
-var test = swapCase('Hello-LOL');
+var test = swapCase('Hello,LOL');
 console.log(test);

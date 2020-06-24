@@ -9,5 +9,5 @@ function vowelCount(str) {
   return count;
 }
 
-var test = vowelCount('airfan');
+var test = vowelCount('All cows eat grass should return');
 console.log(test);

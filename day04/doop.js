@@ -1,6 +1,11 @@
-const num1 = parseInt(process.argv[2]);
-const num2 = parseInt(process.argv[4]);
-const operator = process.argv[3];
+init();
+
+function init() {
+  const num1 = parseInt(process.argv[2]);
+  const num2 = parseInt(process.argv[4]);
+  const operator = process.argv[3];
+  console.log(doop(num1, num2, operator));
+}
 
 function doop(num1, num2, operator) {
   switch (operator) {
@@ -19,6 +24,3 @@ function doop(num1, num2, operator) {
     throw Error('arithmetic operator not provided');
   }
 }
-
-var test = doop(num1, num2, operator);
-console.log(test);

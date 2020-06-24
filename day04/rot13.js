@@ -1,4 +1,10 @@
-const str = process.argv[2];
+init();
+
+function init() {
+  const str = process.argv[2];
+  console.log(rot13(str));
+}
+
 function rot13(str) {
   const myStrLower = 'abcdefghijklmnopkrstuvwxyz';
   const myStrUpper = 'abcdefghijklmnopkrstuvwxyz'.toUpperCase();
@@ -29,5 +35,3 @@ function rot13(str) {
   }
   return res;
 }
-
-console.log(rot13('MY horse'));
