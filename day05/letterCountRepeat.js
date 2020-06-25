@@ -15,7 +15,7 @@ function letterCountRepeat(str) {
   console.log('2# array of obj where stocked the freq of every letter');
   console.log(wordsFreqArr);
   // print the most repeated word of the given string
-  printWordOfHighestFreq(splittedStr, getMaxFreq(wordsFreqArr));
+  return printWordOfHighestFreq(splittedStr, getMaxFreq(wordsFreqArr));
 }
 
 // generate an letter-frequency object
@@ -49,6 +49,13 @@ function getMaxFreq(arr) {
 // print out the word that repeated the most
 function printWordOfHighestFreq(arr, obj) {
   var arrOfKeys = Object.keys(obj);
+  var arrOfValues = Object.values(obj);
+  var noRepeat = arrOfValues.every((freq) => {
+    return freq == 1;
+  });
+  if (noRepeat) {
+    return 1;
+  }
   var mostRepeatedWord = arrOfKeys.reduce(function (a, b) {
     if (obj[a] >= obj[b]) {
       return a;
@@ -56,12 +63,12 @@ function printWordOfHighestFreq(arr, obj) {
       return b;
     }
   });
-  console.log(
-    'The mysterious word whose letters repeated the most at first is:'
+
+  return (
+    '4# The mysterious word whose letters repeated the most at first is: ' +
+    arr[mostRepeatedWord]
   );
-  console.log(arr[mostRepeatedWord]);
-  console.log('******* bien joué *******');
 }
 
 //testing
-letterCountRepeat('Hello apple pie');
+console.log(letterCountRepeat('Hello aple pie'));
